@@ -1,5 +1,3 @@
-# Wolf-Capital
-Wolf Capital
 <!DOCTYPE html>
 <html lang="en">
 <head>

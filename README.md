@@ -4,262 +4,288 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wolf Capital — Capital That Moves With You</title>
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f9;
-      color: #333;
+    :root {
+      --primary:#0f172a;
+      --accent:#16a34a;
+      --muted:#64748b;
+      --bg:#f8fafc;
+      --card:#ffffff;
     }
 
-    header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    * { box-sizing:border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { margin:0; background:var(--bg); color:var(--primary); }
+
+    header, section { padding:60px 20px; max-width:1100px; margin:auto; }
+
+    h1, h2, h3 { margin-bottom:12px; }
+    p { color:var(--muted); line-height:1.6; }
+
+    .btn {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .btn-primary { background:var(--accent); color:white; }
+    .btn-secondary { background:#e5e7eb; color:#111827; }
+
+    .hero { text-align:center; }
+    .hero h1 { font-size:clamp(28px,5vw,46px); }
+    .hero .cta { margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+    .trust { display:flex; justify-content:center; gap:20px; margin-top:30px; flex-wrap:wrap; font-size:14px; }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+
+    .card {
+      background:var(--card);
+      padding:24px;
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 0.5px;
+    /* FORM */
+    .form-wrapper { max-width:700px; margin:auto; }
+    .progress { height:8px; background:#e5e7eb; border-radius:6px; overflow:hidden; margin-bottom:20px; }
+    .progress-bar { height:100%; width:0%; background:var(--accent); transition:.3s; }
+
+    .form-step { display:none; }
+    .form-step.active { display:block; }
+
+    label { display:block; font-size:14px; margin:14px 0 6px; }
+    input, select, textarea {
+      width:100%;
+      padding:14px;
+      border-radius:8px;
+      border:1px solid #d1d5db;
+      font-size:16px;
     }
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-      opacity: 0.95;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .section {
-      background: #ffffff;
-      padding: 30px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #203a43;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      color: #2c5364;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-    }
-
-    input, select, textarea, button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 6px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    button {
-      background: #2c5364;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 16px;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background: #203a43;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .checkbox {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      margin-bottom: 15px;
+    .form-nav {
+      display:flex;
+      justify-content:space-between;
+      margin-top:24px;
+      gap:10px;
     }
 
     footer {
-      text-align: center;
-      font-size: 13px;
-      padding: 25px;
-      color: #666;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
-      }
-
-      header p {
-        font-size: 16px;
-      }
+      background:#020617;
+      color:#94a3b8;
+      padding:40px 20px;
+      font-size:14px;
     }
   </style>
 </head>
-
 <body>
 
-<header>
+<!-- HERO -->
+<header class="hero">
   <h1>Wolf Capital — Capital That Moves With You</h1>
-  <p>Access capital built for growth.</p>
+  <p><strong>Fast Digital Loans.</strong> Apply in Minutes. Get Funded Quickly.</p>
+  <p>Flexible personal and business loans with transparent pricing, no hidden fees, and simple online approval.</p>
+
+  <div class="cta">
+    <a href="#apply" class="btn btn-primary">Check Eligibility</a>
+    <a href="#features" class="btn btn-secondary">Calculate Your Loan</a>
+  </div>
+
+  <div class="trust">
+    <span>🔒 Secure & Encrypted</span>
+    <span>📜 Regulated Lender</span>
+    <span>🛡️ Data Privacy Protected</span>
+  </div>
 </header>
 
-<div class="container">
-
-  <!-- HOW IT WORKS -->
-  <div class="section">
-    <h2>How It Works</h2>
-    <div class="grid">
-      <div>🐺 Apply digitally in minutes</div>
-      <div>⚡ Fast review & approval</div>
-      <div>🏦 Funds sent directly to your bank</div>
+<!-- HOW IT WORKS -->
+<section>
+  <h2>How It Works</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1. Apply Online</h3>
+      <p>Complete a short digital application from any device.</p>
+    </div>
+    <div class="card">
+      <h3>2. Get Approved</h3>
+      <p>We review your details and assess eligibility quickly.</p>
+    </div>
+    <div class="card">
+      <h3>3. Receive Funds</h3>
+      <p>Approved loans are disbursed directly to your bank account.</p>
     </div>
   </div>
+</section>
 
-  <!-- LOAN FEATURES -->
-  <div class="section">
-    <h2>Why Wolf Capital</h2>
-    <ul>
-      <li>Flexible loan amounts for individuals and businesses</li>
-      <li>Transparent pricing with no hidden charges</li>
-      <li>Fully digital — no physical paperwork</li>
-      <li>Early repayment supported</li>
-    </ul>
+<!-- FEATURES -->
+<section id="features">
+  <h2>Loan Features</h2>
+  <div class="grid">
+    <div class="card">💰 $500 – $50,000 Loan Amounts</div>
+    <div class="card">📆 3 – 36 Month Repayment Terms</div>
+    <div class="card">📉 Competitive Interest Rates</div>
+    <div class="card">📄 No Physical Paperwork</div>
+    <div class="card">⚡ Early Repayment Allowed</div>
   </div>
+  <br/>
+  <a href="#apply" class="btn btn-primary">Apply Now</a>
+</section>
 
-  <!-- APPLICATION FORM -->
-  <div class="section">
-    <h2>Apply for Capital</h2>
+<!-- ELIGIBILITY -->
+<section>
+  <h2>Eligibility Snapshot</h2>
+  <ul>
+    <li>18 years or older</li>
+    <li>Valid Government ID</li>
+    <li>Regular source of income</li>
+    <li>Active bank account</li>
+  </ul>
+  <a href="#apply" class="btn btn-primary">Start Application</a>
+</section>
 
-    <form>
+<!-- APPLICATION FORM -->
+<section id="apply">
+  <h2>Loan Application</h2>
 
-      <h3>Personal Information</h3>
-      <div class="grid">
-        <input type="text" placeholder="Full Legal Name" required />
+  <div class="form-wrapper card">
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+    <form id="loanForm">
+
+      <!-- STEP 1 -->
+      <div class="form-step active">
+        <label>Full Legal Name</label>
+        <input required />
+
+        <label>Mobile Phone Number</label>
+        <input required />
+
+        <label>Email Address</label>
+        <input type="email" required />
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step">
+        <label>Date of Birth</label>
         <input type="date" required />
-        <input type="text" placeholder="National ID / Passport Number" required />
-        <input type="text" placeholder="Residential Address" required />
-        <input type="tel" placeholder="Mobile Number" required />
-        <input type="email" placeholder="Email Address" required />
+
+        <label>National ID / Passport Number</label>
+        <input required />
+
+        <label>Residential Address</label>
+        <textarea required></textarea>
       </div>
 
-      <h3>Loan Details</h3>
-      <div class="grid">
-        <input type="number" placeholder="Loan Amount Requested (TZS)" required />
-        <select required>
-          <option value="">Loan Purpose</option>
-          <option>Business Expansion</option>
-          <option>Working Capital</option>
-          <option>Personal Use</option>
+      <!-- STEP 3 -->
+      <div class="form-step">
+        <label>Loan Amount Requested</label>
+        <input type="number" required />
+
+        <label>Loan Purpose</label>
+        <select>
+          <option>Business</option>
+          <option>Personal</option>
           <option>Education</option>
-          <option>Emergency</option>
+          <option>Other</option>
         </select>
-        <select required>
-          <option value="">Repayment Period</option>
-          <option>3 Months</option>
-          <option>6 Months</option>
-          <option>12 Months</option>
-          <option>24 Months</option>
-        </select>
+
+        <label>Preferred Repayment Period (Months)</label>
+        <input type="number" />
       </div>
 
-      <h3>Employment & Financial Information</h3>
-      <div class="grid">
-        <select required>
-          <option value="">Employment Status</option>
+      <!-- STEP 4 -->
+      <div class="form-step">
+        <label>Employment Status</label>
+        <select>
           <option>Employed</option>
           <option>Self-Employed</option>
           <option>Business Owner</option>
         </select>
-        <input type="text" placeholder="Employer / Business Name" required />
-        <input type="number" placeholder="Average Monthly Income (TZS)" required />
+
+        <label>Employer / Business Name</label>
+        <input />
+
+        <label>Monthly Income Range</label>
+        <select>
+          <option>Below $500</option>
+          <option>$500 – $1,000</option>
+          <option>$1,000+</option>
+        </select>
       </div>
 
-      <h3>Bank Details</h3>
-      <div class="grid">
-        <input type="text" placeholder="Bank Name" required />
-        <input type="text" placeholder="Account Holder Name" required />
-        <input type="text" placeholder="Account Number" required />
+      <!-- STEP 5 -->
+      <div class="form-step">
+        <label>Bank Name</label>
+        <input />
+
+        <label>Account Holder Name</label>
+        <input />
+
+        <label>Account Number</label>
+        <input />
       </div>
 
-      <div class="checkbox">
-        <input type="checkbox" required />
-        <label>
-          I confirm that all information provided is accurate and I agree to the
-          <strong>Wolf Capital Terms & Conditions</strong>.
-        </label>
+      <!-- STEP 6 -->
+      <div class="form-step">
+        <label><input type="checkbox" required /> I confirm information is true</label>
+        <label><input type="checkbox" required /> I agree to Loan Terms & Conditions</label>
+        <label><input type="checkbox" required /> I consent to credit checks & data processing</label>
+        <label><input type="checkbox" required /> I authorize automated reminders</label>
+
+        <label>Digital Signature (Type Full Name)</label>
+        <input required />
+
+        <p><strong>Date:</strong> <span id="today"></span></p>
       </div>
 
-      <div class="checkbox">
-        <input type="checkbox" required />
-        <label>
-          I consent to credit checks, electronic communication, and processing of my personal data.
-        </label>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue</button>
       </div>
-
-      <input type="text" placeholder="Type Full Legal Name as Digital Signature" required />
-
-      <button type="submit">Submit Application</button>
 
     </form>
   </div>
+</section>
 
-  <!-- TERMS AND CONDITIONS -->
-  <div class="section">
-    <h2>Wolf Capital – Terms & Conditions (Tanzania)</h2>
-
-    <p><strong>1. Binding Agreement</strong><br>
-    By submitting this application, the Applicant enters into a legally binding agreement with Wolf Capital, governed by the laws of the United Republic of Tanzania.</p>
-
-    <p><strong>2. Eligibility</strong><br>
-    The Applicant confirms that they are at least eighteen (18) years old, legally competent, and resident in Tanzania.</p>
-
-    <p><strong>3. Accuracy of Information</strong><br>
-    The Applicant warrants that all information provided is true, complete, and accurate. Misrepresentation may result in rejection or legal action.</p>
-
-    <p><strong>4. Credit Assessment</strong><br>
-    Wolf Capital may obtain and share credit information with Credit Reference Bureaus licensed by the Bank of Tanzania.</p>
-
-    <p><strong>5. Repayment Obligation</strong><br>
-    The Applicant agrees to repay the loan amount, interest, fees, and any applicable penalties in accordance with the agreed repayment schedule.</p>
-
-    <p><strong>6. Default & Recovery</strong><br>
-    In the event of default, Wolf Capital reserves the right to pursue lawful recovery actions, including legal proceedings and credit reporting.</p>
-
-    <p><strong>7. Data Protection</strong><br>
-    Personal data shall be processed in accordance with the Tanzania Personal Data Protection Act, 2022.</p>
-
-    <p><strong>8. Electronic Acceptance</strong><br>
-    Digital consent, electronic signatures, timestamps, and system logs shall constitute valid legal evidence.</p>
-
-    <p><strong>9. Governing Law</strong><br>
-    This agreement shall be governed by and construed in accordance with the laws of the United Republic of Tanzania.</p>
-  </div>
-
-</div>
-
+<!-- FOOTER / LEGAL -->
 <footer>
-  © 2026 Wolf Capital • Capital That Moves With You
+  <p><strong>Legal Notice (Tanzania)</strong></p>
+  <p>
+    By submitting this application, you confirm the accuracy of the information provided and consent to credit assessment,
+    data processing, and electronic communication in accordance with Tanzanian law. Providing false information may result
+    in rejection or legal action.
+  </p>
+  <p>© Wolf Capital. All Rights Reserved.</p>
 </footer>
+
+<script>
+  const steps = document.querySelectorAll(".form-step");
+  let currentStep = 0;
+
+  function updateUI() {
+    steps.forEach((s,i)=>s.classList.toggle("active", i===currentStep));
+    document.getElementById("progressBar").style.width =
+      ((currentStep+1)/steps.length*100)+"%";
+  }
+
+  function nextStep() {
+    if (currentStep < steps.length - 1) currentStep++;
+    else alert("Application Submitted Successfully ✅");
+    updateUI();
+  }
+
+  function prevStep() {
+    if (currentStep > 0) currentStep--;
+    updateUI();
+  }
+
+  document.getElementById("today").textContent =
+    new Date().toLocaleDateString();
+</script>
 
 </body>
 </html>

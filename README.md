@@ -3,280 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wolf Capital - Access Capital Built for Growth</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
+<title>Wolf Capital — Capital That Moves With You</title>
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background: #f7f9fc;
-    color:#0a2540;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f7fb;
+  color: #1a1a1a;
 }
 
 header {
-    background: linear-gradient(135deg,#0a2540,#1a3d7c);
-    color:white;
-    padding:100px 20px;
-    text-align:center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
 }
 
 header h1 {
-    font-size:48px;
-    font-weight:700;
+  font-size: 38px;
+  margin-bottom: 10px;
 }
 
 header p {
-    margin-top:15px;
-    font-size:18px;
-    opacity:0.9;
+  font-size: 18px;
+  opacity: 0.9;
 }
 
-.btn {
-    display:inline-block;
-    padding:14px 28px;
-    margin:15px 10px;
-    background:#635bff;
-    color:white;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn:hover {
-    background:#4f46e5;
-}
-
-.section {
-    padding:80px 20px;
-    text-align:center;
-}
-
-.section h2 {
-    font-size:32px;
-    margin-bottom:40px;
-}
-
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
+.container {
+  max-width: 1000px;
+  margin: -40px auto 40px;
+  padding: 0 20px;
 }
 
 .card {
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    text-align:left;
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.form-wrapper {
-    max-width:600px;
-    margin:50px auto;
-    background:white;
-    padding:40px;
-    border-radius:12px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
-}
-
-.progress {
-    height:6px;
-    background:#e5e7eb;
-    border-radius:5px;
-    margin-bottom:30px;
+h2 {
+  margin-bottom: 20px;
+  color: #203a43;
 }
 
 .progress-bar {
-    height:6px;
-    width:20%;
-    background:#635bff;
-    border-radius:5px;
-    transition:0.3s;
+  height: 6px;
+  background: #e0e6ed;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  overflow: hidden;
 }
 
+.progress {
+  height: 100%;
+  width: 25%;
+  background: #2c5364;
+  transition: 0.3s ease;
+}
+
+.step { display: none; }
+.step.active { display: block; }
+
 input, select {
-    width:100%;
-    padding:14px;
-    margin:12px 0;
-    border-radius:8px;
-    border:1px solid #ddd;
-    font-size:15px;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 button {
-    padding:14px;
-    width:100%;
-    background:#635bff;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
 }
 
-button:hover {
-    background:#4f46e5;
+.btn-primary {
+  background: #2c5364;
+  color: white;
 }
 
-.step { display:none; }
-.step.active { display:block; }
+.btn-secondary {
+  background: #e0e6ed;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 40px;
+  display: none;
+}
+
+.success-message h2 {
+  color: #2c5364;
+}
 
 footer {
-    background:#0a2540;
-    color:white;
-    text-align:center;
-    padding:30px;
-    font-size:14px;
+  text-align: center;
+  padding: 30px;
+  font-size: 13px;
+  color: #777;
 }
 
-/* OTP Modal */
-.modal {
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.5);
-    justify-content:center;
-    align-items:center;
+@media(max-width: 600px) {
+  header h1 { font-size: 26px; }
+  .card { padding: 25px; }
 }
-
-.modal-content {
-    background:white;
-    padding:40px;
-    border-radius:12px;
-    text-align:center;
-    width:90%;
-    max-width:400px;
-}
-
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Wolf Capital</h1>
-    <p>Access capital built for growth.</p>
-    <p>Fast Digital Loans. Apply in Minutes. Get Funded Quickly.</p>
-    <a href="#apply" class="btn">Check Eligibility</a>
+  <h1>Wolf Capital — Capital That Moves With You</h1>
+  <p>Access capital built for growth.</p>
 </header>
 
-<section class="section">
-    <h2>How It Works</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Apply Online</h3>
-            <p>Complete a secure 5-minute digital application.</p>
-        </div>
-        <div class="card">
-            <h3>Instant Review</h3>
-            <p>Automated affordability & eligibility assessment.</p>
-        </div>
-        <div class="card">
-            <h3>Get Funded</h3>
-            <p>Approved funds sent directly to your bank.</p>
-        </div>
+<div class="container">
+  <div class="card">
+
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
     </div>
-</section>
 
-<section id="apply" class="section">
-<h2>Loan Application</h2>
+    <form id="loanForm">
 
-<div class="form-wrapper">
-<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <!-- STEP 1 -->
+      <div class="step active">
+        <h2>Personal Information</h2>
+        <input type="text" placeholder="Full Legal Name" required>
+        <input type="date" required>
+        <input type="text" placeholder="National ID Number" required>
+      </div>
 
-<form id="loanForm">
+      <!-- STEP 2 -->
+      <div class="step">
+        <h2>Loan Details</h2>
+        <input type="number" placeholder="Loan Amount (TZS)" required>
+        <select required>
+          <option value="">Loan Purpose</option>
+          <option>Business Expansion</option>
+          <option>Working Capital</option>
+          <option>Personal Use</option>
+        </select>
+        <select required>
+          <option value="">Repayment Period</option>
+          <option>3 Months</option>
+          <option>6 Months</option>
+          <option>12 Months</option>
+        </select>
+      </div>
 
-<div class="step active">
-<h3>Basic Details</h3>
-<input type="text" placeholder="Full Legal Name" required>
-<input type="tel" placeholder="Mobile Number" id="phoneInput" required>
-<input type="email" placeholder="Email Address" required>
-<button type="button" onclick="nextStep()">Continue</button>
-</div>
+      <!-- STEP 3 -->
+      <div class="step">
+        <h2>Employment Information</h2>
+        <select required>
+          <option value="">Employment Status</option>
+          <option>Employed</option>
+          <option>Self-Employed</option>
+          <option>Business Owner</option>
+        </select>
+        <input type="number" placeholder="Monthly Income (TZS)" required>
+      </div>
 
-<div class="step">
-<h3>Identity Information</h3>
-<input type="date" required>
-<input type="text" placeholder="National ID / Passport" required>
-<input type="text" placeholder="Residential Address" required>
-<button type="button" onclick="nextStep()">Continue</button>
-</div>
+      <!-- STEP 4 -->
+      <div class="step">
+        <h2>Consent & Declaration</h2>
 
-<div class="step">
-<h3>Loan Details</h3>
-<input type="number" placeholder="Loan Amount" required>
-<select required>
-<option value="">Repayment Period</option>
-<option>3 Months</option>
-<option>6 Months</option>
-<option>12 Months</option>
-</select>
-<button type="button" onclick="nextStep()">Continue</button>
-</div>
+        <div class="checkbox">
+          <input type="checkbox" required>
+          <label>I confirm the information provided is accurate.</label>
+        </div>
 
-<div class="step">
-<h3>Employment Details</h3>
-<select required>
-<option value="">Employment Status</option>
-<option>Employed</option>
-<option>Self-Employed</option>
-</select>
-<input type="number" placeholder="Monthly Income" required>
-<button type="button" onclick="sendOTP()">Verify & Submit</button>
-</div>
+        <div class="checkbox">
+          <input type="checkbox" required>
+          <label>I agree to Wolf Capital Terms & Conditions and credit checks under Tanzanian law.</label>
+        </div>
 
-</form>
-</div>
-</section>
+        <input type="text" placeholder="Type Full Legal Name as Digital Signature" required>
+      </div>
 
-<!-- OTP Modal -->
-<div class="modal" id="otpModal">
-<div class="modal-content">
-<h3>Phone Verification</h3>
-<p>Enter the 6-digit code sent to your phone.</p>
-<input type="text" id="otpInput" placeholder="Enter OTP">
-<button onclick="verifyOTP()">Verify</button>
-</div>
+      <div class="button-group">
+        <button type="button" class="btn-secondary" id="prevBtn">Previous</button>
+        <button type="button" class="btn-primary" id="nextBtn">Next</button>
+      </div>
+
+    </form>
+
+    <div class="success-message" id="successMessage">
+      <h2>Application Submitted Successfully</h2>
+      <p>Thank you for applying with Wolf Capital. Our team will review your application and contact you shortly.</p>
+    </div>
+
+  </div>
 </div>
 
 <footer>
-© 2026 Wolf Capital | Privacy Policy | Terms & Conditions
+© 2026 Wolf Capital • Capital That Moves With You
 </footer>
 
 <script>
+const steps = document.querySelectorAll(".step");
+const progress = document.getElementById("progress");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const form = document.getElementById("loanForm");
+const successMessage = document.getElementById("successMessage");
 
 let currentStep = 0;
-const steps = document.querySelectorAll(".step");
-const progressBar = document.getElementById("progressBar");
-let generatedOTP = "";
 
-function nextStep() {
-    steps[currentStep].classList.remove("active");
-    currentStep++;
-    steps[currentStep].classList.add("active");
-    progressBar.style.width = ((currentStep+1)/steps.length)*100 + "%";
+function updateStep() {
+  steps.forEach((step, index) => {
+    step.classList.toggle("active", index === currentStep);
+  });
+
+  progress.style.width = ((currentStep + 1) / steps.length) * 100 + "%";
+
+  prevBtn.style.display = currentStep === 0 ? "none" : "inline-block";
+  nextBtn.textContent = currentStep === steps.length - 1 ? "Submit" : "Next";
 }
 
-function sendOTP() {
-    generatedOTP = Math.floor(100000 + Math.random() * 900000);
-    alert("Simulation OTP: " + generatedOTP); // For demo only
-    document.getElementById("otpModal").style.display = "flex";
-}
-
-function verifyOTP() {
-    const entered = document.getElementById("otpInput").value;
-    if(entered == generatedOTP) {
-        alert("Application Submitted Successfully ✅");
-        document.getElementById("otpModal").style.display = "none";
-    } else {
-        alert("Invalid OTP. Try again.");
+nextBtn.addEventListener("click", () => {
+  const inputs = steps[currentStep].querySelectorAll("input, select");
+  for (let input of inputs) {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return;
     }
-}
+  }
 
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    updateStep();
+  } else {
+    form.style.display = "none";
+    successMessage.style.display = "block";
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (currentStep > 0) {
+    currentStep--;
+    updateStep();
+  }
+});
+
+updateStep();
 </script>
 
 </body>
